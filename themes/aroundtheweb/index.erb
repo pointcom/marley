@@ -1,0 +1,21 @@
+
+<% post = @posts.shift %>
+<div class="posts">
+  <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
+  <small><%= human_date post.published_on %></small>
+  
+  <div><%= post.body_html %> (<%= post.comments.size %> commentaires)</div>
+</div>
+
+<hr />
+
+
+<% @posts.each do |post| %>
+<div class="posts-excerpt">
+  <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
+  <small><%= human_date post.published_on %> &mdash;</small>
+  
+  <span class="perex"><%= post.perex %> (<%= post.comments.size %> commentaires)</span>
+</div>
+<% end %>
+

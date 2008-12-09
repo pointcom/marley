@@ -42,7 +42,7 @@ module Marley
     private
     
     def self.find_all(options={})
-      options[:except] ||= ['body', 'body_html']
+      options[:except] ||= ['body']
       posts = []
       self.extract_posts_from_directory(options).each do |file|
         attributes = self.extract_post_info_from(file, options)

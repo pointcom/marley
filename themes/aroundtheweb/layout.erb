@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title><%= h(@page_title) %></title>
+
+  <link href="http://<%= hostname %>/feed" rel="alternate" title="Feed for <%= h(CONFIG['blog']['title']) %>" type="application/atom+xml" />
+  <link href="http://<%= hostname %>/feed/comments" rel="alternate" title="Comments for <%= h(CONFIG['blog']['title']) %>" type="application/atom+xml" />
+  <% if @post %>
+  <link href="http://<%= hostname %>/<%= @post.id %>/feed" rel="alternate" title="Feed for comments on article &ldquo;<%= h(@post.title) %>&rdquo; <%= h(CONFIG['blog']['name']) %>" type="application/atom+xml" />
+  <% end %>
+
+
+  <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" />
+  <script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+
+<body>
+  <div id="menu">
+    <div class="container">
+      <ul>
+        <li><a href="#">A propos</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="header">
+    <div class="container">
+      <h1><a href="/"><%= CONFIG['blog']['title'] %></a></h1>
+    </div>
+  </div><!-- /header -->
+  
+  <div class="container">
+    <div id="content">
+      <%= yield %>
+    </div><!-- /content -->
+    
+    <div id="sidebar">
+      <h3>Qui suis-je ?</h3>
+      <p>Je m'appelle <strong>Mathieu Fosse</strong>. Je suis développeur Ruby. Je m'amuse avec Rails, Merb, Sinatra et d'autres joujou écrit en Ruby.</p>
+      
+      <h3>Qui suis-je ?</h3>
+      <p>Je m'appelle <strong>Mathieu Fosse</strong>. Je suis développeur Ruby. Je m'amuse avec Rails, Merb, Sinatra et d'autres joujou écrit en Ruby.</p>
+    </div><!-- /sidebar -->
+    <div class="clear"></div>
+  </div><!-- /container -->
+
+  <% if CONFIG['ga_code'] && Sinatra.env == :production %>
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("<%= CONFIG['ga_code'] %>");
+  pageTracker._trackPageview();
+  </script>
+  <% end %>
+
+</body>
+</html>

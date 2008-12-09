@@ -1,0 +1,78 @@
+<div id="article">
+  <h2><%=h @post.title %></h2>
+    <span class="meta">
+      <%= human_date @post.published_on %> 
+    </span>
+  
+  
+  <div class="body">
+    <%= @post.body_html %>
+  </div><!-- /body -->
+  
+  <p class="tright">
+    <a href="http://<%= hostname %>/<%= @post.id %>/feed" class="image">[Suivre ce billet</a> | 
+    <a href="#comments"><%= @post.comments.size %>&nbsp;comments</a> ]
+    
+  </p>
+  
+  
+  <div id="comments">
+    
+    <h3>Commentaires</h3>
+    
+    <% @post.comments.each_with_index do |comment, index| %>
+    <% if params[:thank_you] && comment == @post.comments.last %>
+    <div id="comment_added_thanks"><div class="in"><p>Merci pour le commantaire !</p></div></div>
+    <% end %>
+    <div class="comment<%= ' spam' if comment.spam? %>" id="comment_<%= comment.id %>">
+      <div class="number"><span class="nodisplay"># </span><%= index.succ %></div>
+      <div class="author">
+        <strong>
+        <%= comment.url ? "<a href=\"#{h(comment.url)}\">#{h(comment.author)}</a>" : h(comment.author) %>
+        </strong> a écrit le <%= human_date(comment.created_at) %>:</div>
+      <div class="message">
+        <%= markup h(comment.body) %>
+      </div>
+    </div><!-- /comment -->
+
+    <% end %>
+
+    <div id="comment_form">
+      <h3 id="add_comment">Ajoutez un commentaire</h3>
+      <form action="/<%= @post.id %>/comments#add_comment" method="post" accept-charset="utf-8">
+        <dl class="form">
+          <dt><label class="required">Ton nom:</label></dt>
+          <dd>
+            <input type="text" class="text" name="author" value="" id="author" />
+            <span>(obligatoire)</span>
+            <% if  @comment and @comment.errors %><div class="error">il manque ton nom !</div><% end %>
+          </dd>
+          
+          <dt><label class="required">Ton e-mail:</label></dt>
+          <dd>
+            <input type="text" class="text" name="email" value="" id="email" />
+            <span>(obligatoire, ne sera pas affiché)</span>
+            <% if  @comment and @comment.errors %><div class="error">Il manque ton e-mail !</div><% end %>
+          </dd>
+          
+          <dt><label>Ton site, si tu en as un ?:</label></dt>
+          <dd>
+            <input type="text" class="text" name="url" value="" id="url" />
+          </dd>
+          
+          
+          <dt><label>Message:</label></dt>
+          <dd>
+            <textarea name="body" rows="8" cols="40" class="text"></textarea>
+            <% if @comment and @comment.errors %><div class="error">Il manque ton message !</div><% end %>
+            <p>(Vous pouvez utiliser la syntaxe Markdown)</p>
+          </dd>
+        </dl>
+        <p><input class="submit" type="submit" value="Envoyer le message &rarr;" accesskey="s" /></p>
+      </form>
+    <div class="clear">&nbsp;</div>
+    </div><!-- /comment_form -->
+
+  </div><!-- /comments -->
+
+</div><!-- /article -->

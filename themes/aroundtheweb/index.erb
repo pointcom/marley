@@ -1,4 +1,4 @@
-
+<h3>Le dernier billet</h3>
 <% post = @posts.shift %>
 <div class="posts">
   <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
@@ -8,11 +8,10 @@
 </div>
 
 <hr />
-
-
+<h3>Les ancien billets</h3>
 <% @posts.each do |post| %>
 <div class="posts-excerpt">
-  <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
+  <h3><a href="/<%= post.id %>.html"><%= post.title %></a></h3>
   <small><%= human_date post.published_on %> &mdash;</small>
   
   <span class="perex"><%= post.perex %> (<%= post.comments.size %> commentaires)</span>

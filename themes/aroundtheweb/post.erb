@@ -41,27 +41,26 @@
       <h3 id="add_comment">Ajoutez un commentaire</h3>
       <form action="/<%= @post.id %>/comments#add_comment" method="post" accept-charset="utf-8">
         <dl class="form">
-          <dt><label class="required">Ton nom:</label></dt>
+          <dt><label class="required">Ton nom</label> <span>(obligatoire)</span></dt>
           <dd>
             <input type="text" class="text" name="author" value="" id="author" />
-            <span>(obligatoire)</span>
+            
             <% if  @comment and @comment.errors %><div class="error">il manque ton nom !</div><% end %>
           </dd>
           
-          <dt><label class="required">Ton e-mail:</label></dt>
+          <dt><label class="required">Ton e-mail</label> <span>(obligatoire, ne sera pas affiché)</span></dt>
           <dd>
             <input type="text" class="text" name="email" value="" id="email" />
-            <span>(obligatoire, ne sera pas affiché)</span>
             <% if  @comment and @comment.errors %><div class="error">Il manque ton e-mail !</div><% end %>
           </dd>
           
-          <dt><label>Ton site, si tu en as un ?:</label></dt>
+          <dt><label>Ton site</label></dt>
           <dd>
             <input type="text" class="text" name="url" value="" id="url" />
           </dd>
           
           
-          <dt><label>Message:</label></dt>
+          <dt><label>Ton message</label></dt>
           <dd>
             <textarea name="body" rows="8" cols="40" class="text"></textarea>
             <% if @comment and @comment.errors %><div class="error">Il manque ton message !</div><% end %>

@@ -1,56 +1,87 @@
-/* #1c0528 on #2e0842*/
-body {
-  font-family: Helvetica, Arial, Verdana, sans-serif;
-  font-size: 12px;
-  background-color: #FFF;
-	margin:0;
-}
 
-a {color:#7c38b1;text-decoration:none;}
-a:visited {color:#7c38b1;}
-hr {border:none;background-color:#CCC;margin:50px;}
+html, body { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+table { border-collapse: collapse; border-spacing: 0; }
+/*ol, ul { list-style: none; }*/
+q:before, q:after, blockquote:before, blockquote:after { content: ""; }
 
-#header {
-	height:200px;
-	background:#220A35 url(/images/logo.png) no-repeat 50% 50%;
-}
-
-#header h1 a {
-	display:block;
-	margin:0;
-	height:200px;
-	text-indent:-9999px;
-	overflow:hidden;
-}
-
-#content, #sidebar {float:left;}
-#content {width:600px;padding:20px;}
-#sidebar {width:180px;padding:10px;background-color:#EEE;}
-#sidebar p {text-align:justify;}
-
-.container {
-	width:840px;
-	margin:auto;
-}
-
-h1, h2 {margin:0;}
-
-#menu ul {list-style:none;height:5px;}
-#menu ul li {float:right;}
-#menu ul li a {display:block;margin:0 10px;}
+a, a:visited { color: #069; font-weight: inherit; line-height: inherit; text-decoration: none; cursor: pointer; }
+a:hover { color: #39c; text-decoration: none; } 
+	
+h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #333; }
+h1 {margin: 0;font-size:70px;font-style:italic;letter-spacing: -5px;font-family: Helvetica, georgia, serif;padding:10px;text-align:right;}
+h1 a {color:#FFF !important;text-decoration:none !important;}
+h2 { font-size: 3em; line-height: 1.4; }
+h3 { font-size: 2.1em; line-height: 1; color: #777; }
+h4 { font-size: 1.4em; line-height: 1.5; }
+h5 { font-size: 1.2em; line-height: 1.75; }	
+	
+p { font-size: 1.4em; line-height: 1.5; margin: 0 0 1.5em; color: #333; }
 
 
 
-.posts-excerpt {margin:50px;}
+em { font-weight: inherit; font-style: italic; color: #777; }
+strong { font-style: inherit; font-weight: bold; color: #333; }	
 
-#comment_form {background-color:#EFEFEF;padding:10px;border-top:2px solid #CCC;}
-.number {font-size:35px;font-weight:bold;color:#DDD;float:left;margin-right:10px;}
-.message {margin-bottom:50px;}
-dl.form dd {margin:0 0 10px 0;}
-input.text, textarea.text {border:1px solid #CCC;}
-input.text {font-size:20px;}
+small { color: #777; font-size: 1.2em; line-height: 1.75; }
+p small { color: #777; font-size: 85.714%; }
+
+li { font-size: 1.4em; line-height: 1.5; color: #333; }
+
+blockquote { display: block; font-size: 1em; border-left: .2em solid #ddd; margin: 0 0 1.8em 3.6em; padding: 0 3.6em 0 1.3em; }
+blockquote p { padding: 0; color: #777; font-style: italic; }
+
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 2em 0 2.1em; height: 0; }
+
+form { margin: 0 0 2.1em; border-radius: .3em; -webkit-border-radius: .3em; -moz-border-radius: .3em; }
+legend { padding: 0 0 1em; font-size: 2.1em; line-height: 1; color: #333; }
+label { display: block; font-size: 1.4em; line-height: 1.5; }
+label small { color: #777; font-size: 85.7142% }
+input[type=text], textarea { display: block; width: 98%; margin: 0 0 1.2em; padding: .375em; border: 0; font-size: 1.2em; line-height: 1.5; border-radius: .3em; -webkit-border-radius: .3em; -moz-border-radius: .3em; border: 1px solid #ddd; }
+button { background: #fff url(images/buttons/button-overlay.png) repeat-x; padding: .2em 1.25em ; color: #333; font: 1.2em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; border: .1em solid #fff; border-radius: .5em; -webkit-border-radius: .5em; -moz-border-radius: .5em; cursor: pointer; text-shadow: 0 .1em .1em #fff; -webkit-box-shadow: 0 1px 1px #aaa; }
+button:hover { -webkit-box-shadow: 0 0 3px #39c; }
+button:active { background: #f5f5f5; }
+.error {color:red;}
+
+body { background: #333; font: 10px "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica Neue, Helvetica, Arial, sans-serif; text-shadow: 0 0 0 #fff; color: #333; line-height:12px;}
+
+div.container { width: 850px; margin: 0 auto;}
+
+#content {padding:20px;border-right:1px solid #CCC;border-left:1px solid #CCC;background-color:#FFF;}
+#sidebar {padding:20px 40px 10px 40px;background-color:#222;border-bottom:4px solid #555;}
+#sidebar h3 {color:#069;}
+#sidebar p {color:#DDD;}
+#sidebar strong {color: #FFF}
+#sidebar .block {float:left;width:230px;margin-right:40px;}
+#sidebar .hblock {height:120px;}
+#sidebar a {color:#FFF;text-decoration:underline;}
+#menu {border-bottom:4px solid #555;}
+#menu a {font-weight:bold;color:#ddd;}
+#menu ul {height:30px;text-align:right;}
+#menu ul li {display:inline;margin:5px;}
+#header, #footer {background-color:#333;}
+#footer p {color:#FFF;}
+#footer {background-color:#000;min-height:200px;}
+#footer .container {padding:20px;}
+
+/* twitter */
+ul.tweet_list {list-style:none;margin:20px 0 0 0;padding:0;}
+.tweet_link {display:block;text-align:right;}
+
+.tweet_odd, .tweet_even {margin-bottom:10px;border-bottom:1px solid #111;}
 
 
-.error {color:#b10000;}
-.clear {clear:both;}
-.tright {text-align:right;}
+
+.clear { clear: both;  }
+.tright 	{text-align:right;}
+.tjustify {text-align:justify;}
+.tcenter 	{text-align:center;}
+.last {margin-right:0 !important;}
+div.comment {margin: 20px 0 50px 0;}
+div.comment div.number {font-family:Georgia;font-size:50px;letter-spacing: -10px;float:left;}
+div.comment div.message, div.comment div.author {margin-left:100px;}
+div.comment div.message p {text-align:justify;}
+
+	
+
+img#yeastymobs {margin-top:20px;}

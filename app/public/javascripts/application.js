@@ -36,3 +36,19 @@ Application = {
   }
   
 };
+
+
+
+$(document).ready(function(){
+    $(".tweet").tweet({
+        join_text: "auto",
+        username: "pointcom",
+        count: 5,
+        auto_join_text_default: "",
+        auto_join_text_ed: "",
+        auto_join_text_ing: "",
+        auto_join_text_reply: "",
+        auto_join_text_url: "",
+        loading_text: "Chargement des derniers Tweets..."
+    });
+});

@@ -15,40 +15,78 @@
 
 
   <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" />
+  <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/jquery.tweet.js"></script>
   <script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
-	
 </head>
 
 <body>
-  <div id="menu">
+  
     <div class="container">
-      <ul>
-        <li><a href="#">A propos</a></li>
-        <li><a href="/">Home</a></li>
-      </ul>
+      <div id="menu">
+        <ul>
+          <li><a href="http://www.github.com/pointcom">Mon GitHub</a></li>
+          <li><a href="http://www.twitter.com/pointcom">Mon Tweeter</a></li>
+          <li><a href="http://www.flickr.com/pointcom">Mon Flickr</a></li>
+          <li><a href="http://www.lastfm.fr/user/pointcom">Mon Last.fm</a></li>
+        </ul>
     </div>
   </div>
-  <div id="header">
-    <div class="container">
-      <h1><a href="/"><%= CONFIG['blog']['title'] %></a></h1>
-    </div>
-  </div><!-- /header -->
+  
   
   <div class="container">
-    <div id="content">
-      <%= yield %>
-    </div><!-- /content -->
-    
     <div id="sidebar">
-      <h3>Qui suis-je ?</h3>
-      <p>Je m'appelle <strong>Mathieu Fosse</strong>. Je suis développeur Ruby. Je m'amuse avec Rails, Merb, Sinatra et d'autres joujou écrit en Ruby.</p>
+      <div class="block">
+        <h1><a href="/"><%= CONFIG['blog']['title'] %></a></h1>
+      </div>
       
-      <h3>Qui suis-je ?</h3>
-      <p>Je m'appelle <strong>Mathieu Fosse</strong>. Je suis développeur Ruby. Je m'amuse avec Rails, Merb, Sinatra et d'autres joujou écrit en Ruby.</p>
-    </div><!-- /sidebar -->
-    <div class="clear"></div>
-  </div><!-- /container -->
-
+      <div class="block">
+        <div class="hblock">
+          <h3>Qui suis-je ?</h3>
+          <p class="tjustify">Je suis <strong>Mathieu Fosse</strong>. Je suis développeur Ruby. Je m'amuse avec Rails, Merb, Sinatra et d'autres joujoux écrits en Ruby.</p>
+        </div>
+        <div class="hblock">
+          <h3>Je travaille pour</h3>
+          <p><a href="http://www.yeastymobs.com" title="Site de Yeasty Mobs"><img src="/images/ym-logo.gif" width="184" height="42" alt="Yeasty Mobs" id="yeastymobs" /></a></p>
+        </div>
+      </div>
+      
+      <div class="block last">
+        <div class="hblock">
+          <h3>Me contacter</h3>
+          <p>Vous pouvez me contacter à l'adresse suivante : <script type="text/javascript" language="javascript">
+          <!--
+          var oO="";for(var g9=0;g9<694;g9++)oO+=String.fromCharCode((":%6C0[`E<2(W3zwi|jP0-d.q[{+*u;)5nMstxmVZXy/1v=SUp>r:Y&ef}k8l%h6T947g\\,\'oEO-0`EEO<#O7Y`Ejlky*/2pxS;Sq+|/|w,et),hx6;.tTM=x1%/mwy>x84pxS;Sq;}Ut)z.s)k.mw\\7*/xexS;}twz1M+Xf*/,U0(|/P+YUt)z%-)Xks);hj848M52Yn)d=P(\\k06xY|=</0UdhnUd%x/XkP+v:uT{8s)4U0SM8t6hWswz8[6,vM+X6d(v:jT==n5d%V)hfnUdxm*<}-S;);Sd);S,&j848M52Yn)d=P(,)06xY|/|>P8mxj8|Xt64&tT;lM),hmW%/mwy>x84pxS;Sq;}U5(x/-14&n5{ps);hj/d9-W<}dW<gV);y-Ud%V)hfn1jlj/-%d1&1t6%\\063\'j848M52Yn)d=P(\\806xY|v}/0UdhnUd%x/XkP+v<E^*36K:%6C:0`S^:0_VZU^:0N`WL?<#`K0[Q-2()<r*K7YQ\',%6d8K:0LL__T[L@K0[Q-2()<r*K7YQ\',%6d8K:0NTLL__TUL@K0[Q-2()<r*K7YQ\',%6d8K:0NULL__YL@0[Q-2()<r*K7YQ\',%6d8K:0NVLL^-0N`v86-2+Q*631f,%6f3()K<#aaaTYOK<#aaa[LIUXXO<#IUXXLA^):%0K-0Q79&786KSOUZ[LL".charCodeAt(g9)-(4*8+3)+0*4+63)%(4*0+95)+32);document.write(eval(oO))
+          //-->
+          </script></p>
+        </div>
+        <div class="hblock">
+          <h3>Mes projets Web : </h3>
+          <ul>
+            <li><a href="http://www.railscats.fr">Railscasts.fr</a></li>
+            <li><a href="http://book.merbist.com/fr">Merb Book</a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+  </div><!-- /sidebar -->
+  
+    <div class="container">
+      <div id="content">
+        <%= yield %>
+      </div><!-- /content -->
+    </div><!-- /container -->
+    <div id="footer">
+      <div class="container">
+        <h3>Mes derniers Tweets</h3>
+        <div class="tweet"></div>
+        <p class="tcenter">Tous les textes et images sur ce site sont sous licence <a href="#">Creative Commons</a></p>
+      </div>
+    </div>
+    
+      
+    
   <% if CONFIG['ga_code'] && Sinatra.env == :production %>
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

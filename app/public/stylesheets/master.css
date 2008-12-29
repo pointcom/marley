@@ -28,7 +28,7 @@ p small { color: #777; font-size: 85.714%; }
 
 li { font-size: 1.4em; line-height: 1.5; color: #333; }
 
-blockquote { display: block; font-size: 1em; border-left: .2em solid #ddd; margin: 0 0 1.8em 3.6em; padding: 0 3.6em 0 1.3em; }
+blockquote { display: block; font-size: 15px; background-color:#F5F5F5;margin: 0 3.6em 1.8em 3.6em; padding: 0 3.6em 0 1.3em; }
 blockquote p { padding: 0; color: #777; font-style: italic; }
 
 hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 2em 0 2.1em; height: 0; }

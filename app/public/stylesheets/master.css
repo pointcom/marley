@@ -1,6 +1,6 @@
 
 html, body { margin: 0; padding: 0; }
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
 table { border-collapse: collapse; border-spacing: 0; }
 /*ol, ul { list-style: none; }*/
 q:before, q:after, blockquote:before, blockquote:after { content: ""; }
@@ -105,4 +105,7 @@ code.ruby span.method 		{color:#f1c000;}
 code.ruby span.constant 	{color:#CCC;}
 code.ruby span.regex 			{color:#339999;}
 
-
+code.xml 																{color:#FFF;}
+code.xml span.tag, code.xml span.punct 	{color:#d35400;}
+code.xml span.attribute 								{color:#339999;}
+code.xml span.string 										{color:#5eec00;}

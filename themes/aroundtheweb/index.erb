@@ -1,4 +1,4 @@
-<h3>Le dernier billet</h3>
+<h3 class="tright">Le dernier billet</h3>
 <% post = @posts.shift %>
 <div class="posts">
   <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
@@ -9,7 +9,8 @@
 </div>
 
 <hr />
-<h3>Les ancien billets</h3>
+<h3 class="tright">Les anciens billets</h3>
+<% unless @posts.empty? %>
 <% @posts.each do |post| %>
 <div class="posts-excerpt">
   <h3><a href="/<%= post.id %>.html"><%= post.title %></a></h3>
@@ -18,4 +19,6 @@
   <span class="perex"><%= post.perex %> (<%= post.comments.size %> commentaires)</span>
 </div>
 <% end %>
-
+<% else %>
+<p>Pas d'anciens billets. Ce blog est tout neuf!</p>
+<% end %>

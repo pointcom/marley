@@ -20,7 +20,7 @@ p { font-size: 1.4em; line-height: 1.5; margin: 0 0 1.5em; color: #333; }
 
 .meta-comments {clear:both;}
 
-code {color:#c34056;font-weight:bold;}
+code {color:#c34056;font-size:12px;font-weight:bold;}
 em { font-weight: inherit; font-style: italic; color: #777; }
 strong { font-style: inherit; font-weight: bold; color: #333; }	
 small { color: #777; font-size: 1.2em; line-height: 1.75; }
@@ -90,3 +90,19 @@ div.comment div.message p {text-align:justify;}
 	
 
 img#yeastymobs {margin-top:20px;}
+
+
+/* code */
+pre {background-color:#000;padding:10px;}
+code.ruby span.keyword 		{color:#d35400;}
+code.ruby span.number 		{color:#ccff33;}
+code.ruby span.punct 			{color:#FFF;}
+code.ruby span.ident 			{color:#FFF;}
+code.ruby span.string 		{color:#5eec00;}
+code.ruby span.comment 		{color:#642599;}
+code.ruby span.symbol 		{color:#339999;}
+code.ruby span.method 		{color:#f1c000;}
+code.ruby span.constant 	{color:#CCC;}
+code.ruby span.regex 			{color:#339999;}
+
+

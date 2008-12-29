@@ -11,19 +11,19 @@ set :user, "{REPLACE WITH YOUR SSH USERNAME}"
 
 # ----- Setup Git -------------------------------------------------------------
 set :runner, "deployer"
-set :application, 'marley'
+set :application, 'aroundtheweb'
 set :scm, :git
-# set :branch, "deploy"
+set :branch, "aroundtheweb"
 set :git_enable_submodules, 1
-set :repository,  "{REPLACE WITH YOUR REPOSITORY}"
+set :repository,  "git://github.com/pointcom/marley.git"
 set :deploy_via, :remote_cache
-set :deploy_to, "{REPLACE WITH YOUR PATH}/#{application}"
+set :deploy_to, "/usr/local/var/www/#{application}"
 set :use_sudo, false
 
 # ----- Setup servers, paths and callbacks ------------------------------------
-role :app, "{REPLACE WITH YOUR SERVER}"
-role :web, "{REPLACE WITH YOUR SERVER}"
-role :db,  "{REPLACE WITH YOUR SERVER}", :primary => true
+role :app, "blog.kawooa.org"
+role :web, "blog.kawooa.org"
+role :db,  "blog.kawooa.org", :primary => true
 
 # ----- Marley tasks ----------------------------------------------------------
 

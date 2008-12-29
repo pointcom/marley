@@ -4,7 +4,8 @@
   <h2><a href="/<%= post.id %>.html"><%= post.title %></a></h2>
   <small><%= human_date post.published_on %></small>
   
-  <div><%= post.body_html %> (<%= post.comments.size %> commentaires)</div>
+  <div><%= post.body_html %></div>
+  <div class="meta-comments">(<%= post.comments.size %> commentaires)</div>
 </div>
 
 <hr />

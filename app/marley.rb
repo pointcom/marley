@@ -3,7 +3,8 @@ require 'ftools'           # ... we wanna access the filesystem ...
 require 'yaml'             # ... use YAML for configs and stuff ...
 require 'sinatra'          # ... Classy web-development dressed in DSL, http://sinatrarb.heroku.com
 require 'activerecord'     # ... or Datamapper? What? :)
-require 'rdiscount'        # ... convert Markdown into HTML in blazing speed
+#require 'rdiscount'        # ... convert Markdown into HTML in blazing speed
+require 'maruku'
 require File.join(File.dirname(__FILE__), '..', 'vendor', 'akismetor')   # ... disable comment spam
 require File.join(File.dirname(__FILE__), '..', 'vendor', 'githubber')   # ... get repo info
 
@@ -41,7 +42,8 @@ helpers do
   alias_method :h, :escape_html
 
   def markup(string)
-    RDiscount::new(string).to_html
+    #RDiscount::new(string).to_html
+    Maruku::new(string).to_html
   end
   
   def human_date(datetime)

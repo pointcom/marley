@@ -95,7 +95,7 @@ end
 get '/:post_id.html' do
   @post = Marley::Post[ params[:post_id] ]
   throw :halt, [404, not_found ] unless @post
-  @page_title = "#{@post.title} #{CONFIG['blog']['name']}"
+  @page_title = "#{@post.title} ~ #{CONFIG['blog']['title']} ~ #{CONFIG['blog']['name']}"
   erb :post 
 end
 

@@ -12,11 +12,11 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; color: #333; }
 h1 {margin: 0;font-size:70px;font-style:italic;letter-spacing: -5px;font-family: Helvetica, georgia, serif;padding:10px;text-align:right;}
 h1 a {color:#FFF !important;text-decoration:none !important;}
 h2 { font-size: 3em; line-height: 1.4; }
-h3 { font-size: 2.1em; line-height: 1; color: #777; }
-h4 { font-size: 1.4em; line-height: 1.5; }
+h3 { font-size: 2.4em; line-height: 1; color: #777; }
+h4 { font-size: 2.2em; line-height: 1.5; margin:40px 0 10px 0;}
 h5 { font-size: 1.2em; line-height: 1.75; }	
 	
-p { font-size: 1.4em; line-height: 1.5; margin: 0 0 1.5em; color: #333; }
+p { font-size: 1.4em; line-height: 1.5; margin: 0 0 1em; color: #333; text-align:justify;}
 
 .meta-comments {clear:both;}
 
@@ -28,8 +28,8 @@ p small { color: #777; font-size: 85.714%; }
 
 li { font-size: 1.4em; line-height: 1.5; color: #333; }
 
-blockquote { display: block; font-size: 15px; background-color:#F5F5F5;margin: 0 3.6em 1.8em 3.6em; padding: 0 3.6em 0 1.3em; }
-blockquote p { padding: 0; color: #777; font-style: italic; }
+blockquote { display: block; font-size: 15px; background-color:#F5F5F5;margin: 0 3.6em 1.8em 3.6em; padding: 10px 20px; }
+blockquote p { padding: 0; color: #777; font-style: italic; line-height:25px;}
 
 hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 2em 0 2.1em; height: 0; }
 
@@ -57,12 +57,13 @@ div.container { width: 850px; margin: 0 auto;}
 #sidebar a {color:#FFF;text-decoration:underline;}
 #menu {border-bottom:4px solid #555;}
 #menu a {font-weight:bold;color:#ddd;}
-#menu ul {height:30px;text-align:right;}
+#menu ul {text-align:right;}
 #menu ul li {display:inline;margin:5px;}
 #header, #footer {background-color:#333;}
 #footer p {color:#FFF;}
 #footer {background-color:#000;min-height:200px;}
 #footer .container {padding:20px;}
+#footer h3, #footer div.tweet {padding:0 20px;}
 
 /* twitter */
 ul.tweet_list {list-style:none;margin:20px 0 0 0;padding:0;}
@@ -70,16 +71,17 @@ ul.tweet_list {list-style:none;margin:20px 0 0 0;padding:0;}
 
 .tweet_odd, .tweet_even {margin-bottom:10px;border-bottom:1px solid #111;}
 
-
+.perex {font-size:12px;}
 
 /* alignements */
 .clear { clear: both;  }
-.tright 	{text-align:right;}
-.tjustify {text-align:justify;}
-.tcenter 	{text-align:center;}
+.tright 	{text-align:right 	!important;}
+.tleft 		{text-align:left 	!important;}
+.tjustify {text-align:justify !important;}
+.tcenter 	{text-align:center 	!important;}
 
 .imgl 	{float:left;margin:0 10px 10px 0;border:10px solid #eee;}
-.imgr 	{float:right;}
+.imgr 	{float:right;margin:0 0 10px 10px;border:10px solid #eee;}
 
 .last {margin-right:0 !important;}
 div.comment {margin: 20px 0 50px 0;}
